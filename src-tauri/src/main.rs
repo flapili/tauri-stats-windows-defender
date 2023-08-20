@@ -2,12 +2,12 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use const_random::const_random;
+const RAND_BYTES: [u8; 1024] = const_random!([u8; 1024]);
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn test() -> String {
-    let rand_bytes: [u32; 1024] = const_random!([u32; 1024]);
-    format!("rand_bytes size: {}", rand_bytes.len())
+    format!("rand_bytes size: {}", RAND_BYTES.len())
 }
 
 fn main() {
