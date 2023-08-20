@@ -1,0 +1,1 @@
+# tauri-stats-windows-defender
